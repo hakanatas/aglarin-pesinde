@@ -1,0 +1,112 @@
+/* ─────────────────────────────────────────────────────────────
+   AĞLARIN PEŞİNDE — BTY.5.3.1 (senaryo)
+   Her vuruş bir altyazıdır: tr, en, note (öğretmen için seslendirme).
+   Değiştirdikten sonra: npm run build
+   ───────────────────────────────────────────────────────────── */
+BF.defineFilm({
+  meta: {
+    slug: 'aglarin-pesinde', title: 'Ağların Peşinde', titleEn: 'On the Trail of Networks', code: 'BTY.5.3.1',
+    outcomeEn: 'Inquiring into computer networks and their components',
+    summary: 'Karo, gönderdiği mesajın arkadaşının telefonuna nasıl ulaştığını merak eder ve bir sorgulama yolculuğuna çıkar: merak et, soru sor, bilgi topla, doğrula, çıkarım yap. Bilgisayar ağı; cihaz, bağlantı ve ağ cihazları kavramlarıyla tanıtılır. Evdeki bir ağda bilgisayar, telefon, yönlendirici, modem ve internetin birbirine nasıl bağlandığı veri paketleriyle izlenir. Toplanan bilgilerin doğruluğu değerlendirilir ve bu bilgilerden çıkarımlar yapılır.',
+    summaryEn: 'Karo wonders how his message reaches a friend and follows an inquiry cycle: wonder, ask, gather, check and conclude. He meets networks, devices, connections, routers and modems, follows packets through a home network, checks claims for accuracy and draws conclusions.',
+    blurb: 'Sorgulama döngüsü; ağ, bileşenleri, evdeki ağda veri paketleri, bilgiyi doğrulama ve çıkarım.',
+    posterAlt: 'Başlık ve Karo; çevresinde yönlendirici, modem, kablo ve Wi-Fi karoları',
+  },
+  scenes: [
+    { type: 'intro', icons: [{ icon: 'network', c: 'kobalt' }, { icon: 'router', c: 'turkuaz' }, { icon: 'modem', c: 'safran' }, { icon: 'wifi', c: 'mercan' }, { icon: 'cable', c: 'zumrut' }, { icon: 'globe', c: 'kobalt' }, { icon: 'question', c: 'mor' }, { icon: 'search', c: 'turkuaz' }],
+      beats: [
+        { tr: 'Mesajım arkadaşımın telefonuna nasıl gidiyor?', en: 'How does my message get to my friend\'s phone?', extra: 1,
+          note: 'Karo arkadaşına bir mesaj gönderdi. Mesaj bir saniyede ulaştı. Ama nasıl? Arada ne var?' },
+        { tr: 'Hadi, ağların peşine düşelim', en: 'Let\'s go on the trail of networks',
+          note: 'Karo bu soruyu araştırmaya karar verdi. Sen de onunla birlikte sorgula.' },
+      ] },
+    { type: 'steps', name: 'Sorgulama', en: 'Inquiry', desc: 'Merak et, soru sor, bilgi topla, doğrula, çıkarım yap.', out: 'a, b', loop: 'yeni soru',
+      steps: [
+        { icon: 'lightbulb', label: 'Merak et', text: 'Neyi bilmek istiyorum?', c: 'safran' },
+        { icon: 'question', label: 'Soru sor', text: 'Mesajım hangi yoldan gider?', c: 'mor' },
+        { icon: 'search', label: 'Bilgi topla', text: 'Kitap, site, uzman', c: 'turkuaz' },
+        { icon: 'check', label: 'Doğrula', text: 'Bilgi doğru mu?', c: 'zumrut' },
+        { icon: 'brain', label: 'Çıkarım yap', text: 'Ne öğrendim?', c: 'kobalt' },
+      ],
+      beats: [
+        { tr: 'Önce neyi merak ettiğini belirle', en: 'First decide what you wonder about', show: 2, extra: 1,
+          note: 'Sorgulamak merakla başlar. Karo neyi merak ettiğini yazar ve bunu bir soruya dönüştürür: Mesajım hangi yoldan gider?' },
+        { tr: 'Bilgi topla, doğrula, çıkarım yap', en: 'Gather, check and draw conclusions', show: 5, extra: 1,
+          note: 'Sonra bilgi toplar, bilginin doğru olup olmadığını kontrol eder ve bir sonuca ulaşır. Her sonuç yeni bir soru doğurabilir.' },
+      ] },
+    { type: 'cards', name: 'Ağ nedir?', en: 'What is a network?', desc: 'Bilgisayar ağı ve temel bileşenleri.', out: 'c',
+      cards: [
+        { word: 'CİHAZ', def: 'Bilgisayar, telefon, tablet, yazıcı', icon: 'laptop', c: 'kobalt' },
+        { word: 'BAĞLANTI', def: 'Kablo ya da kablosuz yol', icon: 'cable', c: 'zumrut' },
+        { word: 'AĞ CİHAZI', def: 'Yönlendirici, modem: trafiği yönetir', icon: 'router', c: 'turkuaz' },
+      ],
+      result: { word: 'BİLGİSAYAR AĞI', c: 'safran', chips: ['veri paylaşır', 'yazıcı paylaşır', 'internete bağlanır'], line: 'Birbirine bağlı cihazlar: balık ağındaki düğümler gibi' },
+      beats: [
+        { tr: 'Ağda cihazlar vardır', en: 'A network has devices',
+          note: 'Bir ağda bilgisayar, telefon, tablet, yazıcı gibi cihazlar bulunur.' },
+        { tr: 'Cihazlar kabloyla ya da kablosuz bağlanır', en: 'Devices connect with cables or wirelessly',
+          note: 'Cihazlar birbirine kabloyla ya da kablosuz olarak bağlanır.' },
+        { tr: 'Ağ cihazları trafiği yönetir', en: 'Network devices manage the traffic',
+          note: 'Yönlendirici ve modem gibi ağ cihazları, verinin doğru yere gitmesini sağlar.' },
+        { tr: 'Hepsi birlikte: bilgisayar ağı', en: 'All together: a computer network',
+          note: 'Balık ağındaki düğümler gibi birbirine bağlı cihazlara bilgisayar ağı denir. Ağ sayesinde veri ve yazıcı paylaşır, internete bağlanırız.' },
+      ] },
+    { type: 'network', name: 'Evdeki ağ', en: 'The home network', desc: 'Bilgisayar, telefon, yönlendirici, modem ve internet arasında veri paketleri.', out: 'c',
+      nodes: [
+        { id: 'pc', icon: 'desktop', name: 'Bilgisayar', c: 'kobalt', pos: [0.08, 0.2], vpos: [0.18, 0.08] },
+        { id: 'ph', icon: 'phone', name: 'Telefon', c: 'mercan', pos: [0.08, 0.82], vpos: [0.82, 0.08] },
+        { id: 'pr', icon: 'printer', name: 'Yazıcı', c: 'mor', pos: [0.3, 0.9], vpos: [0.18, 0.32] },
+        { id: 'r', icon: 'router', name: 'Yönlendirici', c: 'turkuaz', pos: [0.38, 0.45], vpos: [0.55, 0.3] },
+        { id: 'm', icon: 'modem', name: 'Modem', c: 'safran', pos: [0.64, 0.45], vpos: [0.5, 0.62] },
+        { id: 'net', icon: 'globe', name: 'İnternet', c: 'zumrut', pos: [0.9, 0.45], vpos: [0.5, 0.9] },
+      ],
+      links: [{ a: 'pc', b: 'r', kind: 'kablo', label: 'kablo' }, { a: 'ph', b: 'r', kind: 'kablosuz', label: 'Wi-Fi' }, { a: 'pr', b: 'r', kind: 'kablosuz' }, { a: 'r', b: 'm', kind: 'kablo' }, { a: 'm', b: 'net', kind: 'uzak' }],
+      area: [{ label: 'Evdeki ağ', rect: [0.0, 0.0, 0.52, 1.0], vrect: [0.0, 0.0, 1.0, 0.44], c: 'turkuaz', beat: 1 }],
+      beats: [
+        { tr: 'Evdeki cihazlar yönlendiriciye bağlanır', en: 'Home devices connect to the router', show: ['pc', 'ph', 'pr', 'r'],
+          note: 'Evimizdeki bilgisayar kabloyla, telefon ve yazıcı kablosuz olarak yönlendiriciye bağlanır.' },
+        { tr: 'Bilgisayardan yazıcıya bir belge gider', en: 'A document travels from the computer to the printer', packet: ['pc', 'r', 'pr'],
+          note: 'Bilgisayardan bir belge yazdıralım. Belge küçük veri paketleri halinde yönlendiriciden geçip yazıcıya ulaşır.' },
+        { tr: 'Modem evimizi internete bağlar', en: 'The modem connects our home to the internet', show: ['m', 'net'], packet: ['ph', 'r', 'm', 'net'], extra: 1,
+          note: 'Karo\'nun mesajı ise telefondan yönlendiriciye, oradan modeme ve internete gider. Sonra arkadaşının telefonuna ulaşır.' },
+      ] },
+    { type: 'judge', name: 'Bilgi doğru mu?', en: 'Is it true?', desc: 'Toplanan bilgilerin doğruluğu değerlendirilir.', out: 'ç', labels: { ok: 'doğru', no: 'yanlış' },
+      beats: [
+        { tr: 'Kablosuz bağlantı da bir ağ bağlantısıdır', en: 'A wireless link is a network link too',
+          note: 'Bir ansiklopedi sitesinde okuduk: Wi-Fi kablosuz bir ağ bağlantısıdır. Ders kitabımız da aynısını söylüyor. Doğru.',
+          row: { icon: 'wifi', text: 'Ansiklopedi: "Wi-Fi kablosuz bir ağ bağlantısıdır."', ok: true, why: 'Ders kitabı da aynısını söylüyor' } },
+        { tr: 'İnternet tek bir dev bilgisayar mı?', en: 'Is the internet one giant computer?',
+          note: 'Bir videonun yorumunda "İnternet uzaydaki tek bir dev bilgisayardır" yazıyor. Kaynak belirsiz ve bilgi yanlış: internet, dünyadaki pek çok ağın birbirine bağlanmasıdır.',
+          row: { icon: 'chat', text: 'Bir yorum: "İnternet uzaydaki tek bir dev bilgisayardır."', ok: false, why: 'İnternet birçok ağın birleşimidir' } },
+        { tr: 'Birden fazla güvenilir kaynağa bak', en: 'Check more than one reliable source',
+          note: 'Bir bilginin doğruluğunu anlamak için birden fazla güvenilir kaynağa bakarız: ders kitabı, öğretmen, resmi kurum siteleri.',
+          row: { icon: 'library', text: 'Bilgiyi ders kitabı ve öğretmenimle karşılaştırdım', ok: true, why: 'Güvenilir kaynaklar aynı şeyi söylüyor' } },
+      ] },
+    { type: 'columns', name: 'Çıkarım yap', en: 'Draw conclusions', desc: 'Toplanan bilgilerden çıkarımlar yapılır.', out: 'd',
+      cols: [{ label: 'ÖĞRENDİM', c: 'turkuaz' }, { label: 'ÇIKARIMIM', c: 'safran' }],
+      items: [
+        { text: 'Evdeki cihazlar yönlendiriciye bağlı', col: 0, icon: 'router', beat: 0 },
+        { text: 'Modem evi internete bağlıyor', col: 0, icon: 'modem', beat: 0 },
+        { text: 'Yönlendirici kapanırsa cihazlar birbirini görmez', col: 1, icon: 'warning', beat: 1 },
+        { text: 'Modem kapanırsa ev ağı çalışır ama internet olmaz', col: 1, icon: 'lightbulb', beat: 1 },
+      ],
+      beats: [
+        { tr: 'Topladığım bilgileri yan yana koyuyorum', en: 'I put the facts I gathered side by side',
+          note: 'Karo topladığı bilgileri yan yana koyar: cihazlar yönlendiriciye bağlı, modem de evi internete bağlıyor.' },
+        { tr: 'Buradan bir sonuç çıkarıyorum', en: 'From this, I draw a conclusion', extra: 1.5,
+          note: 'Buradan bir çıkarım yapar: yönlendirici kapanırsa cihazlar birbirine ulaşamaz. Modem kapanırsa evdeki ağ çalışır ama internete çıkamayız.' },
+      ] },
+    { type: 'summary',
+      lines: [
+        { icon: 'question', c: 'mor', text: 'Merak et, soru sor, bilgi topla' },
+        { icon: 'network', c: 'kobalt', text: 'Ağ: cihazlar, bağlantılar, ağ cihazları' },
+        { icon: 'check', c: 'zumrut', text: 'Bilgiyi doğrula, sonra çıkarım yap' },
+      ],
+      beats: [
+        { tr: 'Aklında kalsın: iyi bir soru, iyi bir yolculuktur', en: 'Remember: a good question is a good journey',
+          note: 'Aklında kalsın: merak ettiğin konuyu soruya dönüştür, bilgi topla ve doğrula.' },
+        { tr: 'Ağlar dünyayı birbirine bağlar!', en: 'Networks connect the world!',
+          note: 'Bilgisayar ağları sayesinde mesajlarımız bir saniyede dünyanın öbür ucuna gider.' },
+      ] },
+  ],
+});
